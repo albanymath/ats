@@ -1,0 +1,22 @@
+% !TeX program = xelatex
+\documentclass{UAmathtalk}
+
+\author{Mike Lesnick}
+\urladdr{https://www.albany.edu/~ml644186/}
+\title{Computational Aspects of 2-Parameter Persistent Homology --- Part~2}
+\date{Thursday, November 1, 2018}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In topological data analysis, one associates to the data a filtered topological space, whose structure we then examine using persistent homology. However, in many settings, a single filtered space is not a rich enough invariant to encode the interesting structure of the data. This motivates the study of multi-parameter persistence, which associates to the data a topological space simultaneously equipped with two or more filtrations. The homological invariants of these ``multi-filtered spaces,'' called persistence modules, are much richer than their 1-D counterparts, but also far more complicated. As such, adapting the usual 1-parameter persistent homology methodology for data analysis to the multi-parameter setting requires new ideas.
+
+For the past several years, I have been working with \href{http://www.mlwright.org}{Matthew Wright} and several other collaborators on \href{http://rivet.online}{RIVET}, a practical software tool for the visualization and analysis of 2-parameter persistent homology. One key new feature of \href{http://rivet.online}{RIVET} is a fast (cubic time) algorithm for computing the minimal presentation of a 2-parameter persistence module. Perhaps surprisingly, the computational cost of the algorithm is similar in practice to that of the standard algorithm for computing 1-parameter persistent homology.
+
+In this series of two talks, I'll introduce 2-parameter persistent homology, \href{http://rivet.online}{RIVET}, and our algorithm for computing minimal presentations.
+\end{abstract}
+
+\end{document}

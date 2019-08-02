@@ -1,0 +1,24 @@
+% !TeX program = xelatex
+\documentclass{UAmathtalk}
+
+\author{Daniel Goldfarb}
+\address{Niskayuna HS}
+\title{An Application Of Persistent Homology To Hockey Analytics}
+\date{Thursday, October 9, 2014}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+I will apply the major computational tool from Topological Data Analysis (TDA), persistent homology, to discover patterns in the data related to professional sports teams.
+I will use official game data from the North-American National Hockey League (NHL) 2013--2014 season to discover the correlation between the composition of NHL teams with the currently preferred offensive performance markers.
+Specifically, I use the program TeamPlex (based on the JavaPlex software library) to generate the persistence bar-codes.
+TeamPlex is applied to players as data points in a multidimensional (up to 12-D) data space where each coordinate corresponds to a selected performance marker.
+
+The conclusion is that each team's offensive performance (measured by the popular characteristic used in NHL called the Corsi number) correlates with two bar-code characteristics: greater \emph{sparsity} reflected in the longer bars in dimension 0 and lower \emph{tunneling} reflected in the low number/length of the 1-dimensional classes.
+The methodology can be used by team managers in identifying deficiencies in the present composition of the team and analyzing player trades and acquisitions.
+I will show an example of a proposed trade which should improve the Corsi number of the team.​
+\end{abstract}
+
+\end{document}

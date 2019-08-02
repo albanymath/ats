@@ -1,0 +1,21 @@
+% !TeX program = xelatex
+\documentclass{UAmathtalk}
+
+\author{Boris Goldfarb}
+\urladdr{http://www.albany.edu/~goldfarb/}
+\title{Singular Persistent Homology with Effective Concurrent Computation}
+\date{Thursday, September 15, 2016}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Persistent homology is a popular tool in Topological Data Analysis. It provides numerical characteristics which reflect global geometric properties of data sets. In order to be useful in practice, for example for feature generation in machine learning, it needs to be  effectively computable. Classical homology is a computable topological invariant because of the Mayer-Vietoris exact and spectral sequences associated to intrinsic coverings of a space. Regrettably, persistent homology itself is defined through morphing simplicial nerves of coverings of the data set.
+
+This talk will introduce a counterpart, the singular persistent homology, where the perspective is different. The data set is left stationary while the parameter is allowed to change in the form of the size of singular simplices. Because of this nature, coverings of the data set are much easier to handle than in other attempts to parallelize the computation of persistent homology.
+
+When computed directly, which is possible in finite metric spaces, the complexity is certainly worse than for persistent homology but not as much as one would fear. We show however that the singular and the traditional persistent homologies are isomorphic, so it is possible to perform the concurrent computations using traditional algorithms. The important point is that the advantages of distributed computation are not necessarily in speed improvement but in sheer feasibility for large data sets.
+\end{abstract}
+
+\end{document}

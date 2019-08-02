@@ -1,0 +1,43 @@
+\documentclass{UAmathtalk}
+
+\author{Hank Kurland}
+\address{RPI}
+\title{Intersection Pairings on Conley Indices}
+\date{Thursday, March 14, 2013}
+
+\usepackage{amsmath}
+\newcommand*{\da}{{\mathchoice{}{}{\textstyle*}{\scriptstyle*}}}
+\newcommand*{\tensor}{\otimes}
+\newcommand*{\cC}{{\mathcal{C}}}
+\newcommand*{\tH}{{\tilde H}}
+\newcommand*{\CI}[1]{{\cC\!\left(#1\right)}}
+\newcommand*{\rtCI}[1]{\cC^\da\mspace{-4mu}\left(#1\right)}
+\newcommand*{\morph}[1]{\mbox{\sf morph$_{#1}$}}
+\newcommand*{\tHI}[2]{\tH_{#1}\mspace{1mu}\cC\mspace{-4mu}\left(#2\right)}
+\newcommand*{\tHrI}[2]{\tH_{#1}\mspace{1mu}\cC^\da\!\left(#2\right)}
+
+\DeclareMathAlphabet{\matheurm}      {U}{eur}{m}{n}
+    \SetMathAlphabet{\matheurm}{bold}{U}{eur}{b}{n}
+\renewcommand*{\morph}[1]{\matheurm{morph}_{#1}}
+\renewcommand*{\abstractsize}{\normalsize}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+A vector field on a manifold $M$ generates a flow in $M$ and an invariant set $S$ of the flow is isolated if it is the largest invariant set in some compact neighborhood of itself.
+Associated to $S$ via the flow is a small category $\CI{S}$, the Conley index of $S$, whose objects are compact pointed spaces called index spaces, and for any two index spaces $X$ and $Y$, $\morph{\CI{S}}(X,Y)$ consists of a single homotopy class of a flow-defined homotopy equivalence from $X$ to $Y$.
+This makes it possible to define reduced singular homology and cohomology modules of a Conley index.
+Reversing time in the flow (i.e., the vectorfield is replaced by its negative) leaves $S$ an isolated invariant set of the time-reversed flow and associates to $S$ a time-reversed Conly index $\rtCI{S}$.
+In his book \textit{Lectures on Algebraic Topology}, Dold defines intersection numbers and classes for two relative homology classes.
+I will review this material and use it to define an intersection number pairing on $\left[\tHI{*}{S}\tensor\tHrI{*}{S}\right]_m$ where $m=\dim(M)\ge2$ and a more general intersection pairing on $\tHI{*}{S}\tensor\tHrI{*}{S}$ with values in the \v{C}ech homology of $S$.
+I'll outline how the intersection number pairing can be used to prove existence of solution to a two-point boundary value problem arising as the equilibrium equation of the heterozygote inferior case of a Fisher equation, namely, \[
+  v_t=\varepsilon^2 v_{xx}+v(1-v)(v-a(x))\quad\text{where $0<a(x)<1$}
+\]
+for a single allele in a 1-dimensional habitat with small genetic diffusion within the habitat, i.e., $0<\varepsilon\ll1$, and no influx of genetic material from outside the habitat, i.e., Neumann boundary conditions.
+Key to the application is that the intersection pairing is invariant under continuation along a parameterized arc of isolated invariant sets arising from a corresponding arc of vector fields.
+
+\end{abstract}
+
+\end{document}

@@ -1,0 +1,147 @@
+html, body, p, h1, h2, img, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: black;
+  background: white;
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1, h2 {
+  font-weight: bold;
+}
+h1 {
+  text-align: center;
+  clear: both;
+  font-size: 200%;
+  color: #d7d7d7;
+  background: #442359;
+  text-shadow: 0em .3em .25em black;
+  padding: .5em 1.2em .7em;
+  margin-bottom: .5em;
+}
+h2 {
+  text-align: left;
+  font-size: 140%;
+  color: #442359;
+}
+p {
+  margin-bottom: 1em;
+}
+.thissemester {
+  color: #d7d7d7;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+a:link, a:visited {
+  color: inherit;
+  border-bottom: 1px dotted #442359;
+}
+a:hover, a:active {
+  color: #e0aa0f;
+  background: #442359;
+}
+h1 > a:hover, h1 > a:active {
+  color: inherit;
+  background: inherit;
+}
+abbr, acronym {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+img {
+  border: 0;
+  vertical-align: bottom;
+}
+dl {
+  margin: .5em 0 1.5em;
+}
+dl dt {
+  float: left;
+  text-align: right;
+  width: 7.5em;
+  border-bottom: 4px solid #e0aa0f;
+}
+dl dt.next {
+  border-bottom-color: #442359;
+}
+dl dd {
+  margin-left: 8.5em;
+}
+dd + dd {
+  margin-bottom: .75em;
+  font-style: italic;
+}
+dd.noseminar {
+  font-variant: small-caps;
+}
+dd.canceled {
+  text-decoration: line-through;
+}
+#wrap {
+  margin: auto;
+  padding: 10px;
+  width: 880px;
+}
+#masthead img {
+  width: 525px;
+  height: 65px;
+}
+#masthead p:first-child {
+  float: left;
+  margin: 0 .25em -1em 0;
+}
+#masthead p:last-child {
+  float: right;
+  margin-top: 1em;
+  text-align: right;
+  font-weight: bold;
+  color: #442359;
+}
+#main {
+  float: left;
+  width: 630px;
+}
+#side {
+  float: right;
+  width: 245px;
+  padding-left: 5px;
+}
+#side h2, p {
+  text-align: right;
+}
+#footer {
+  clear: both;
+  text-align: right;
+  font-size: 92%;
+  font-style: italic;
+  padding: 1em 0 1em;
+  border-top: 2px solid #442359;
+}
+::selection {
+  background: #d7d7d7;
+}
+::-moz-selection {
+  background: #d7d7d7;
+}
+
+@media print {
+body {
+  font-size: 15px;
+}
+a:link, a:visited, abbr, acronym {
+  border: none;
+}
+a.printurl:link:after, a.printurl:visited:after {
+  content: " [" attr(href) "]";
+  font-size: 90%;
+}
+dl dt.next {
+  border-bottom-color: #e0aa0f;
+}
+.othersemesters, #footer {
+  display: none;
+}
+}
