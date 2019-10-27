@@ -9,73 +9,6 @@
   <meta name="author" content="Marco Varisco">
   <meta name="description" content="Algebra/Topology Seminar, University at Albany, State University of New York.">
   <meta name="keywords" content="algebra, topology, algebraic topology, geometry, seminar, math, mathematics">
-
-  <script src="https://www.gstatic.com/charts/loader.js"></script>
-  <script>
-
-    google.charts.load('current', {'packages':['corechart']});
-
-    google.charts.setOnLoadCallback(drawBars);
-    google.charts.setOnLoadCallback(drawDonut);
-
-    var myColors = ['#442359', '#e0aa0f', '#1e7278'];
-
-    function drawBars() {
-      var data = google.visualization.arrayToDataTable([
-        ['Semester', 'UAlbany', 'US', 'Non-US'],
-        ['Fall 2019',    2, 8, 3],
-        ['Spring 2019',  2, 8, 2],
-        ['Fall 2018',    6, 5, 1],
-        ['Spring 2018',  3, 9, 1],
-        ['Fall 2017',    5, 6, 1],
-        ['Spring 2017',  4, 2, 1],
-        ['Fall 2016',    5, 6, 1],
-        ['Spring 2016',  3, 6, 3],
-        ['Fall 2015',    9, 2, 1],
-        ['Spring 2015',  1,10, 1],
-        ['Fall 2014',    5, 9, 0],
-        ['Spring 2014',  4, 6, 0],
-        ['Fall 2013',    9, 3, 1],
-        ['Spring 2013',  7, 5, 0],
-        ['Fall 2012',    3, 9, 2],
-        ['Spring 2012',  5, 6, 0],
-        ['Fall 2011',    6, 4, 2],
-        ['Spring 2011', 12, 0, 1],
-        ['Fall 2010',   11, 0, 0],
-      ]);
-      var options = {
-        title: 'Number of Speakers and Their Institutions',
-        isStacked: true,
-        hAxis: {ticks: [2,4,6,8,10,12,14]},
-        animation: {startup: true, duration: 300},
-        width:  600,
-        height: 520,
-        colors: myColors,
-        fontName: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif',
-      };
-      var chart = new google.visualization.BarChart(document.getElementById('bars'));
-      chart.draw(data, options);
-    }
-
-    function drawDonut() {
-      var data = google.visualization.arrayToDataTable([
-        ['From', 'Total'],
-        ['UAlbany', 102],
-        ['US',      104],
-        ['Non-US',   21],
-      ]);
-      var options = {
-        pieHole: 0.4,
-        pieStartAngle: 180,
-        width:  600,
-        height: 360,
-        colors: myColors,
-        fontName: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif',
-      };
-      var chart = new google.visualization.PieChart(document.getElementById('donut'));
-      chart.draw(data, options);
-    }
-  </script>
 </head>
 
 <body>
@@ -104,9 +37,9 @@
 </p>
 <h2>Funding</h2>
 <p>Through a grant from the <a href="https://www.simonsfoundation.org">Simons Foundation</a> (#419561, M.&nbsp;Varisco)</p>
-<h2 class="othersemesters">Schedules</h2>
+<h2 class="othersemesters">Other Semesters</h2>
 <p class="othersemesters">
-  <a href="index-20-3.html">Spring 2020</a><br>
+  <span class="thissemester">Spring 2020</span><br>
   <a href="index.html">Fall 2019</a><br>
   <a href="index-19-3.html">Spring 2019</a><br>
   <a href="index-18-9.html">Fall 2018</a><br>
@@ -127,17 +60,75 @@
   <a href="index-11-3.html">Spring 2011</a><br>
   <a href="index-10-9.html">Fall 2010</a>
 </p>
+<h2 class="othersemesters"><a href="stats.html">Statistics</a></h2>
 </div>
 
 <div id="main">
-<h2>Statistics</h2>
-<div id="bars"></div>
-<div id="donut"></div>
+<h2>Spring Semester 2020</h2>
+<dl>
+
+<dt>January 30</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>February 6</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>February 13</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>February 20</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>February 27</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>March 5</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>March 12</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>March 19</dt>
+<dd class="noseminar">no classes</dd>
+<dd>&nbsp;</dd>
+
+<dt>March 26</dt>
+<dd><a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/250433">J. Matthew Douglass</a> (NSF)</dd>
+<dd>&nbsp;</dd>
+
+<dt>April 2</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>April 9</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>April 16</dt>
+<dd>&nbsp;</dd>
+<dd>&nbsp;</dd>
+
+<dt>April 23</dt>
+<dd><a href="https://www.utica.edu/people/xiao-xiao">Xiao Xiao</a> (Utica College)</dd>
+<dd>&nbsp;</dd>
+
+<dt>April 30</dt>
+<dd><a href="http://math.gmu.edu/~rgoldin/">Rebecca Goldin</a> (George Mason University)</dd>
+<dd>&nbsp;</dd>
+
+</dl>
 </div>
 
 <div id="footer">
 <p>
-  Updated <time datetime="2019-09-27">September&nbsp;27, 2019</time><br>
+  Updated <time datetime="2019-10-25">October&nbsp;25, 2019</time><br>
   <a href="mailto:mvarisco@albany.edu?subject=subscribe&body=Please%20add%20me%20to%20the%20Algebra/Topology%20Seminar%20email%20list.">Subscribe to email announcements</a>
 </p>
 </div>
