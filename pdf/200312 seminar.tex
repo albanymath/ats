@@ -1,0 +1,19 @@
+% !TeX program = xelatex
+\documentclass{UAmathtalk}
+
+\author{Chinwe Ekenna}
+\address{Department of Computer Science, UAlbany}
+\urladdr{http://www.cs.albany.edu/RACS/}
+\title{Approximating and Planning the Robot Configuration Space with Topological Guarantees}
+\date{Thursday, March 12, 2020}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+I will present and discuss recent methods I have employed to construct sparse roadmaps that approximate and measure the underlying topology of the a robots Cfree space. I will show that the constructed roadmap is homotopy equivalent to some offset of the Cfree space. To construct the roadmap, we first sample the configuration space so that the resulting graph is an $n$-skeleton graph that constructs a Vietoris-Rips (VR) complex. Then, we perform a series of topological collapses to remove vertices from the graph while still preserving its topological properties. The resulting roadmaps are used to plan paths for different robots and the experimental results show that the proposed topological approach is faster and more feasible in complex high-dimensional spaces.
+\end{abstract}
+
+\end{document}
