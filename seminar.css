@@ -77,7 +77,7 @@ dd + dd {
 dd.noseminar {
   font-variant: small-caps;
 }
-dd.canceled {
+.canceled {
   text-decoration: line-through;
 }
 #wrap {
