@@ -83,11 +83,11 @@ dd.noseminar {
 #wrap {
   margin: auto;
   padding: 10px;
-  width: 880px;
+  width: 800px;
 }
 #masthead img {
-  width: 525px;
-  height: 65px;
+  width: 450px;
+  height: 55px;
 }
 #masthead p:first-child {
   float: left;
@@ -95,7 +95,7 @@ dd.noseminar {
 }
 #masthead p:last-child {
   float: right;
-  margin-top: 1em;
+  margin-top: .5em;
   text-align: right;
   font-weight: bold;
   color: #442359;
@@ -106,7 +106,7 @@ dd.noseminar {
 }
 #side {
   float: right;
-  width: 245px;
+  width: 165px;
   padding: 0 0 10px 5px;
 }
 #side h2, p {
