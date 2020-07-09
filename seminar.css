@@ -102,11 +102,11 @@ dd.noseminar {
 }
 #main {
   float: left;
-  width: 630px;
+  width: 625px;
 }
 #side {
   float: right;
-  width: 165px;
+  width: 170px;
   padding: 0 0 10px 5px;
 }
 #side h2, p {
