@@ -31,6 +31,9 @@ p {
 .thissemester {
   color: #d7d7d7;
 }
+.thissemester::before {
+  content: "▷ "; 
+}
 a {
   text-decoration: none;
   cursor: pointer;
