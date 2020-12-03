@@ -32,7 +32,8 @@ p {
   color: #d7d7d7;
 }
 .thissemester::before {
-  content: "▷ "; 
+  content: "▷ ";
+  color: #e0aa0f;
 }
 a {
   text-decoration: none;
