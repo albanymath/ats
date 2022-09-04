@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UAmathtalk}[2019/10/23 UAlbany math talk class]
+\ProvidesClass{UAmathtalk}[2022/09/04 UAlbany math talk class]
 \ProvidesFile{UAlogo.png}
 \RequirePackage{etoolbox}
 \newcommand*{\address}[1]{\gdef\@address{#1}}
@@ -9,7 +9,7 @@
 \DeclareOption{seminar}{%
   \renewcommand*{\event}{Algebra/Topology Seminar}%
   \renewcommand*{\eventurl}{https://www.albany.edu/~mv312143/seminar/}%
-  \renewcommand*{\when}{1:15 p.m.}%
+  \renewcommand*{\when}{3:00 p.m.}%
   \renewcommand*{\where}{ES-143}%
   \renewcommand*{\announcer}{Marco Varisco}%
 }
