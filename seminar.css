@@ -7,7 +7,7 @@ body {
   background: white;
   font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
 }
-h1, h2 {
+h1, h2, label {
   font-weight: bold;
 }
 h1 {
@@ -20,13 +20,16 @@ h1 {
   padding: .5em 1.2em .7em;
   margin-bottom: .5em;
 }
-h2 {
+h2, label {
   text-align: left;
   font-size: 140%;
   color: #442359;
 }
-p {
+p, form {
   margin-bottom: 1em;
+}
+.semesters {
+  font-size: 90%;
 }
 .thissemester {
   color: #d7d7d7;
