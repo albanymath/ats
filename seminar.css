@@ -148,7 +148,7 @@ a.printurl:link:after, a.printurl:visited:after {
 dl dt.next {
   border-bottom-color: #e0aa0f;
 }
-.othersemesters, #footer {
+.noprint, #footer {
   display: none;
 }
 }
