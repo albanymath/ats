@@ -70,7 +70,7 @@
 
 <div id="footer">
 <p>
-  Updated <time datetime="2022-09-20">September&nbsp;20, 2022</time><br>
+  Updated <time datetime="2022-09-23">September&nbsp;23, 2022</time><br>
   <a href="mailto:mvarisco@albany.edu?subject=subscribe&body=Please%20add%20me%20to%20the%20Algebra/Topology%20Seminar%20email%20list.">Subscribe to email announcements</a>
 </p>
 </div>
@@ -210,8 +210,8 @@
      ["2015-10-22","Changlong Zhong","UAlbany","Formal Affine Demazure Algebra and Its Dual — Part 1","https://www.albany.edu/~cz954339/","151022%20seminar.pdf"],
      ["2015-10-29","Changlong Zhong","UAlbany","Formal Affine Demazure Algebra and Its Dual — Part 2","https://www.albany.edu/~cz954339/","151029%20seminar.pdf"],
      ["2015-11-05","Marco Varisco","UAlbany","Assembly Maps for Topological Cyclic Homology of Group Algebras — Part 1","https://www.albany.edu/~mv312143/","151105%20seminar.pdf"],
-     ["2015-11-12","Marco Varisco","UAlbany","Assembly Maps for Topological Cyclic Homology of Group Algebras  — Part 2","https://www.albany.edu/~mv312143/","151112%20seminar.pdf"],
-     ["2015-11-19","Marco Varisco","UAlbany","Assembly Maps for Topological Cyclic Homology of Group Algebras  — Part 3","https://www.albany.edu/~mv312143/","151119%20seminar.pdf"],
+     ["2015-11-12","Marco Varisco","UAlbany","Assembly Maps for Topological Cyclic Homology of Group Algebras — Part 2","https://www.albany.edu/~mv312143/","151112%20seminar.pdf"],
+     ["2015-11-19","Marco Varisco","UAlbany","Assembly Maps for Topological Cyclic Homology of Group Algebras — Part 3","https://www.albany.edu/~mv312143/","151119%20seminar.pdf"],
      ["2015-12-03","Dan Wood","UAlbany","On Monomial Resolutions Supported on Posets","","151203%20seminar.pdf"],
      ["2016-01-28","Ellen Gasparovic","Union College","Multi-Scale Modeling and Analysis of Stratified Space Data","https://sites.google.com/a/union.edu/gasparovic/","160128%20seminar.pdf"],
      ["2016-02-04","Jethro van Ekeren","Universidade Federal Fluminense, Brazil","Classification of Simple Vertex Algebras in Rank 24","http://w3.impa.br/~jethro/","160204%20seminar.pdf"],
@@ -311,16 +311,19 @@
      ["2020-02-27","Matt Hogancamp","Northeastern University","Hecke Algebras, Symmetric Functions, and Their Categorification","https://mathscinet.ams.org/mathscinet/MRAuthorID/948897","200227%20seminar.pdf"],
      ["2020-03-05","Abdalrazzaq Zalloum","Queen’s University, Canada","Regular Languages for Contracting Geodesics in Groups","https://mast.queensu.ca/~abdul/","200305%20seminar.pdf"],
      ["2022-09-15","Matt Zaremsky","UAlbany","Shift-Similar Groups of Permutations of the Natural Numbers","https://www.albany.edu/~mz498674/","220915%20seminar.pdf"],
+     ["2022-09-27","Amit Patel","Colorado State University; Queen Mary University of London, UK","The Functoriality of Persistence","https://www.math.colostate.edu/~akp/","220927%20seminar.pdf"],
+     ["2022-09-29","Matthew Haulmark","Binghamton University, SUNY","Cube Complexes at Infinity","https://matthewhaulmark.com","220929%20seminar.pdf"],
   ];
   const dateOptions = { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" };
   document.addEventListener("submit", (event) => {
     let query = document.getElementById("query").value.trim().replace(/\s+/g, "|");
     let results;
     let output = "";
+    let csv = "";
     if (query) {
       query = new RegExp(query, "gi");
-      results = talks.filter((e) => e.slice(1,4).join(" ").match(query));
-      output += `<h2>${results.length} Result${results.length===1 ? "" : "s"}</h2><dl>` + results.map((e) => {
+      results = talks.filter((e) => e.slice(1,4).join(" ").match(query)).map((e) => {
+        csv += `"${e[0]}","${e[1]}","${e[2]}","${e[3]}","${e[4]}","${e[5] ? "https://albalgtopsem.github.io/pdf/"+e[5] : ""}"\n`;
         const date   = new Date(e[0]);
         const dateUS = new Intl.DateTimeFormat("en-US", dateOptions).format(date);
         const index  = `index-${dateUS.slice(-2)}-${date.getMonth()<7 ? 3 : 9}.html`;
@@ -328,7 +331,13 @@
         const title  = e[5] ? `<a href="pdf/${e[5]}">${e[3]}</a>` : e[3];
         const affil  = (e[2] && e[2]!=="UAlbany") ? ` (${e[2]})` : "";
         return `<dt><a href="${index}">${dateUS}</a></dt><dd>${author}${affil}</dd><dd>${title}</dd>`;
-      }).join("") + "</dl>";
+      });
+      if (results.length) {
+        csv = URL.createObjectURL(new Blob(["Date,Speaker,Affiliation,Title,URL,PDF\n" + csv], { type: "text/csv" }));
+        output += `<h2><a href="${csv}" download="results.csv">${results.length} Result${results.length===1 ? "" : "s"}</a></h2><dl>${results.join("")}</dl>`;
+      } else {
+        output += "<h2>No Results</h2>";
+      }
     }
     document.getElementById("output").innerHTML = output;
     event.preventDefault();
