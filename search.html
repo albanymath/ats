@@ -70,7 +70,7 @@
 
 <div id="footer">
 <p>
-  Updated <time datetime="2022-10-07">October&nbsp;7, 2022</time><br>
+  Updated <time datetime="2022-10-19">October&nbsp;19, 2022</time><br>
   <a href="mailto:mvarisco@albany.edu?subject=subscribe&body=Please%20add%20me%20to%20the%20Algebra/Topology%20Seminar%20email%20list.">Subscribe to email announcements</a>
 </p>
 </div>
@@ -325,7 +325,7 @@
     if (query) {
       query = new RegExp(query, "gi");
       results = talks.filter((e) => e.slice(1,4).join(" ").match(query)).map((e) => {
-        csv += `"${e[0]}","${e[1]}","${e[2]}","${e[3]}","${e[4]}","${e[5] ? "https://albalgtopsem.github.io/pdf/"+e[5] : ""}"\n`;
+        csv += `"${e[0]}","${e[1]}","${e[2]}","${e[3]}","${e[4]}","${e[5] ? "https://albanymath.github.io/ats/pdf/"+e[5] : ""}"\n`;
         const date   = new Date(e[0]);
         const dateUS = new Intl.DateTimeFormat("en-US", dateOptions).format(date);
         const index  = `index-${dateUS.slice(-2)}-${date.getMonth()<7 ? 3 : 9}.html`;
