@@ -372,6 +372,12 @@
     document.getElementById("output").innerHTML = output;
     event.preventDefault();
   });
+  const url = new URL(document.location.href);
+  const query = url.searchParams.get("query");
+  if (query) {
+    document.getElementById("query").value = query;
+    form.requestSubmit();
+  }
 </script>
 </body>
 </html>
