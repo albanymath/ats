@@ -384,7 +384,7 @@
   const url = new URL(document.location.href);
   const query = url.searchParams.get("query");
   const first = url.searchParams.get("first");
-  if (first.toLowerCase().startsWith("new")){
+  if (first?.toLowerCase().startsWith("new")) {
     document.getElementById("newest").checked = true;
   }
   if (query) {
