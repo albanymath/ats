@@ -121,7 +121,7 @@ dd.noseminar {
   width: 170px;
   padding: 0 0 10px 5px;
 }
-#side h2, p {
+#side h2, #side p {
   text-align: right;
 }
 #side h2 + h2 {
