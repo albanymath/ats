@@ -349,14 +349,12 @@
   const form = document.querySelector("form");
   form.addEventListener("submit", (event) => {
     const data = new FormData(form);
-    const query = data.get("query").trim().replace(/\s+/g, "|");
-    const first = data.get("first");
-    let results;
-    let csv = [];
+    const query = data.get("query")?.trim();
     let output = "";
     if (query) {
-      const re = new RegExp(query, "gi");
-      results = talks.filter((e) => e.slice(1,4).join(" ").match(re)).map((e) => {
+      const re = new RegExp(query.replace(/\s+/g, "|"), "gi");
+      let csv = [];
+      let results = talks.filter((e) => e.slice(1,4).join(" ").match(re)).map((e) => {
         csv.push(`"${e[0]}","${e[1]}","${e[2]}","${e[3]}","${e[4]}","${e[5] ? "https://albanymath.github.io/ats/pdf/"+e[5] : ""}","${e[6]}"`);
         const date   = new Date(e[0]);
         const dateUS = new Intl.DateTimeFormat("en-US", dateOptions).format(date);
@@ -367,7 +365,7 @@
         return `<dt><a href="${index}">${dateUS}</a></dt><dd>${author}${affil}</dd><dd>${title}</dd>`;
       });
       if (results.length) {
-        if (first === "newest") {
+        if (data.get("first") === "newest") {
           results.reverse();
           csv.reverse();
         }
@@ -382,7 +380,7 @@
     event.preventDefault();
   });
   const url = new URL(document.location.href);
-  const query = url.searchParams.get("query");
+  const query = url.searchParams.get("query")?.trim();
   const first = url.searchParams.get("first");
   if (first?.toLowerCase().startsWith("new")) {
     document.getElementById("newest").checked = true;
