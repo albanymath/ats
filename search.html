@@ -342,15 +342,17 @@
     ["2023-11-30","Genevieve Walsh","Tufts University","Hyperbolic Groups, Relatively Hyperbolic Groups, and the Cannon Conjecture","https://gwalsh01.pages.tufts.edu","231130%20seminar.pdf"],
   ];
   const dateOptions = { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" };
-  document.addEventListener("submit", (event) => {
-    let query = document.getElementById("query").value.trim().replace(/\s+/g, "|");
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (event) => {
+    const data = new FormData(form);
+    let query = data.get("query").trim().replace(/\s+/g, "|");
     let results;
+    let csv = [];
     let output = "";
-    let csv = "";
     if (query) {
       query = new RegExp(query, "gi");
       results = talks.filter((e) => e.slice(1,4).join(" ").match(query)).map((e) => {
-        csv += `"${e[0]}","${e[1]}","${e[2]}","${e[3]}","${e[4]}","${e[5] ? "https://albanymath.github.io/ats/pdf/"+e[5] : ""}"\n`;
+        csv.push(`"${e[0]}","${e[1]}","${e[2]}","${e[3]}","${e[4]}","${e[5] ? "https://albanymath.github.io/ats/pdf/"+e[5] : ""}"`);
         const date   = new Date(e[0]);
         const dateUS = new Intl.DateTimeFormat("en-US", dateOptions).format(date);
         const index  = `index-${dateUS.slice(-2)}-${date.getMonth()<7 ? 3 : 9}.html`;
@@ -360,7 +362,8 @@
         return `<dt><a href="${index}">${dateUS}</a></dt><dd>${author}${affil}</dd><dd>${title}</dd>`;
       });
       if (results.length) {
-        csv = URL.createObjectURL(new Blob(["Date,Speaker,Affiliation,Title,URL,PDF\n" + csv], { type: "text/csv" }));
+        csv.unshift("Date,Speaker,Affiliation,Title,URL,PDF");
+        csv = URL.createObjectURL(new Blob([csv.join("\n")], { type: "text/csv" }));
         output += `<h2><a href="${csv}" download="results.csv">${results.length} Result${results.length===1 ? "" : "s"}</a></h2><dl>${results.join("")}</dl>`;
       } else {
         output += "<h2>No Results</h2>";
