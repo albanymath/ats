@@ -76,7 +76,7 @@
 
 <div id="footer">
 <p>
-  Updated <time datetime="2023-11-18">November&nbsp;18, 2023</time><br>
+  Updated <time datetime="2023-11-19">November&nbsp;19, 2023</time><br>
   <a href="mailto:mvarisco@albany.edu?subject=subscribe&body=Please%20add%20me%20to%20the%20Algebra/Topology%20Seminar%20email%20list.">Subscribe to email announcements</a>
 </p>
 </div>
@@ -345,49 +345,55 @@
     ["2023-11-16","Rui Xiong","University of Ottawa, Canada","Bumpless Pipe Dreams Meet Puzzles","https://www.researchgate.net/profile/Rui-Xiong-19","231116%20seminar.pdf","Non-US"],
     ["2023-11-30","Genevieve Walsh","Tufts University","Hyperbolic Groups, Relatively Hyperbolic Groups, and the Cannon Conjecture","https://gwalsh01.pages.tufts.edu","231130%20seminar.pdf","US"],
   ];
-  const dateOptions = { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" };
+  function search(query, reverse) {
+    const re = new RegExp(query.replace(/\s+/g, "|"), "gi");
+    const dateOptions = { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" };
+    let output = [];
+    let result = talks.filter((e) => e.slice(1,4).join(" ").match(re)).map((e) => {
+      const date   = new Date(e[0]);
+      const dateUS = new Intl.DateTimeFormat("en-US", dateOptions).format(date);
+      const index  = `index-${dateUS.slice(-2)}-${date.getMonth()<7 ? 3 : 9}.html`;
+      const author = e[4] ? `<a href=    "${e[4]}">${e[1]}</a>` : e[1];
+      const title  = e[5] ? `<a href="pdf/${e[5]}">${e[3]}</a>` : e[3];
+      const affil  = (e[2] && e[2]!=="UAlbany") ? ` (${e[2]})` : "";
+      output.push(`<dt><a href="${index}">${dateUS}</a></dt><dd>${author}${affil}</dd><dd>${title}</dd>`);
+      if (e[5]) {
+        e.splice(5, 1, "https://albanymath.github.io/ats/pdf/" + e[5]);
+      }
+      return e.map(i => `"${i}"`);
+    });
+    if (result.length) {
+      if (reverse) {
+        result.reverse();
+        output.reverse();
+      }
+      result.unshift("Date,Speaker,Affiliation,Title,URL,PDF,Stats");
+      const csv = URL.createObjectURL(new Blob([result.join("\n")], { type: "text/csv" }));
+      output.unshift(`<h2><a href="${csv}" download="results.csv">${output.length} Result${output.length===1 ? "" : "s"}</a></h2><dl>`);
+      output.push("</dl>");
+    } else {
+      output.push("<h2>No Results</h2>");
+    }
+    return output.join("");
+  }
+  const url = new URL(document.location.href);
   const form = document.querySelector("form");
   form.addEventListener("submit", (event) => {
     const data = new FormData(form);
     const query = data.get("query")?.trim();
-    let output = "";
-    if (query) {
-      const re = new RegExp(query.replace(/\s+/g, "|"), "gi");
-      let csv = [];
-      let results = talks.filter((e) => e.slice(1,4).join(" ").match(re)).map((e) => {
-        csv.push(`"${e[0]}","${e[1]}","${e[2]}","${e[3]}","${e[4]}","${e[5] ? "https://albanymath.github.io/ats/pdf/"+e[5] : ""}","${e[6]}"`);
-        const date   = new Date(e[0]);
-        const dateUS = new Intl.DateTimeFormat("en-US", dateOptions).format(date);
-        const index  = `index-${dateUS.slice(-2)}-${date.getMonth()<7 ? 3 : 9}.html`;
-        const author = e[4] ? `<a href=    "${e[4]}">${e[1]}</a>` : e[1];
-        const title  = e[5] ? `<a href="pdf/${e[5]}">${e[3]}</a>` : e[3];
-        const affil  = (e[2] && e[2]!=="UAlbany") ? ` (${e[2]})` : "";
-        return `<dt><a href="${index}">${dateUS}</a></dt><dd>${author}${affil}</dd><dd>${title}</dd>`;
-      });
-      if (results.length) {
-        if (data.get("first") === "newest") {
-          results.reverse();
-          csv.reverse();
-        }
-        csv.unshift("Date,Speaker,Affiliation,Title,URL,PDF,Stats");
-        csv = URL.createObjectURL(new Blob([csv.join("\n")], { type: "text/csv" }));
-        output += `<h2><a href="${csv}" download="results.csv">${results.length} Result${results.length===1 ? "" : "s"}</a></h2><dl>${results.join("")}</dl>`;
-      } else {
-        output += "<h2>No Results</h2>";
-      }
-    }
-    document.getElementById("output").innerHTML = output;
+    const first = data.get("first");
+    query                ? url.searchParams.set("q", query) : url.searchParams.delete("q");
+    (first === "newest") ? url.searchParams.set("r", "1")   : url.searchParams.delete("r");
+    url.searchParams.sort();
+    document.location.href = url.href;
     event.preventDefault();
   });
-  const url = new URL(document.location.href);
-  const query = url.searchParams.get("query")?.trim();
-  const first = url.searchParams.get("first");
-  if (first?.toLowerCase().startsWith("new")) {
-    document.getElementById("newest").checked = true;
-  }
+  const query   = url.searchParams.get("q")?.trim();
+  const reverse = url.searchParams.has("r", "1");
+  document.getElementById( reverse ? "newest" : "oldest" ).checked = true;
   if (query) {
     document.getElementById("query").value = query;
-    form.requestSubmit();
+    document.getElementById("output").innerHTML = search(query, reverse);
   }
 </script>
 </body>
