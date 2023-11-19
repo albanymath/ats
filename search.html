@@ -388,7 +388,7 @@
     document.location.href = url.href;
     event.preventDefault();
   });
-  const query   = url.searchParams.get("q")?.trim();
+  const query   = url.searchParams.getAll("q").join(" ").trim();
   const reverse = url.searchParams.has("r", "1");
   document.getElementById( reverse ? "newest" : "oldest" ).checked = true;
   if (query) {
