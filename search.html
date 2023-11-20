@@ -358,7 +358,7 @@
       const affil  = (e[2] && e[2]!=="UAlbany") ? ` (${e[2]})` : "";
       output.push(`<dt><a href="${index}">${dateUS}</a></dt><dd>${author}${affil}</dd><dd>${title}</dd>`);
       if (e[5]) {
-        e.splice(5, 1, "https://albanymath.github.io/ats/pdf/" + e[5]);
+        e.splice(5, 1, `https://albanymath.github.io/ats/pdf/${e[5]}`);
       }
       return e.map(i => `"${i}"`);
     });
