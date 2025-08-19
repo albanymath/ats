@@ -20,6 +20,7 @@
     function drawBars() {
       var data = google.visualization.arrayToDataTable([
         ['Semester', 'UAlbany', 'US', 'Non-US'],
+        ['Fall 2025',    1, 7, 2],
         ['Spring 2025',  4, 5, 2],
         ['Fall 2024',    2, 4, 2],
         ['Spring 2024',  2, 3, 1],
@@ -53,7 +54,7 @@
         hAxis: {ticks: [2,4,6,8,10,12,14]},
         animation: {startup: true, duration: 300},
         width:  610,
-        height: 680,
+        height: 700,
         colors: myColors,
         fontName: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif',
       };
@@ -64,9 +65,9 @@
     function drawDonut() {
       var data = google.visualization.arrayToDataTable([
         ['From', 'Total'],
-        ['UAlbany', 119],
-        ['US',      135],
-        ['Non-US',   30],
+        ['UAlbany', 120],
+        ['US',      142],
+        ['Non-US',   32],
       ]);
       var options = {
         pieHole: 0.4,
@@ -154,7 +155,7 @@
   &mdash;
   Hosted on <a href="https://github.com/albanymath/ats">GitHub</a>
   &mdash;
-  Updated <time datetime="2025-04-25">April&nbsp;25, 2025</time><br>
+  Updated <time datetime="2025-08-19">August&nbsp;19, 2025</time><br>
   <a href="mailto:mvarisco@albany.edu?subject=subscribe&body=Please%20add%20me%20to%20the%20Algebra/Topology%20Seminar%20email%20list.">Subscribe to email announcements</a>
 </p>
 </div>
