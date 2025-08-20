@@ -79,7 +79,7 @@
 
 <div id="footer">
 <p>
-  Updated <time datetime="2025-04-26">April&nbsp;26, 2025</time><br>
+  Updated <time datetime="2025-08-19">August&nbsp;19, 2025</time><br>
   <a href="mailto:mvarisco@albany.edu?subject=subscribe&body=Please%20add%20me%20to%20the%20Algebra/Topology%20Seminar%20email%20list.">Subscribe to email announcements</a>
 </p>
 </div>
@@ -386,7 +386,7 @@
       const link   = `<a href="${index}#:~:text=${dateUS[1]}">${dateUS[0]}</a>`;
       const author = e[4] ? `<a href=    "${e[4]}">${e[1]}</a>` : e[1];
       const title  = e[5] ? `<a href="pdf/${e[5]}">${e[3]}</a>` : e[3];
-      const affil  = (e[2] && e[2]!=="UAlbany") ? ` (${e[2]})` : "";
+      const affil  = e[2] ? ` (${e[2]})` : "";
       output.push(`<dt>${link}</dt><dd>${author}${affil}</dd><dd>${title}</dd>`);
       if (e[5]) {
         e.splice(5, 1, `https://albanymath.github.io/ats/pdf/${e[5]}`);
