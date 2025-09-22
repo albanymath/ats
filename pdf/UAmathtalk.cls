@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{UAmathtalk}[2022/09/04 UAlbany math talk class]
+\ProvidesClass{UAmathtalk}[2025/09/21 UAlbany math talk class]
 \ProvidesFile{UAlogo.png}
 \RequirePackage{etoolbox}
 \newcommand*{\address}[1]{\gdef\@address{#1}}
@@ -8,14 +8,14 @@
 \docsvlist{event, eventurl, when, where, moreinfo, announcer}
 \DeclareOption{seminar}{%
   \renewcommand*{\event}{Algebra/Topology Seminar}%
-  \renewcommand*{\eventurl}{https://www.albany.edu/~mv312143/seminar/}%
+  \renewcommand*{\eventurl}{https://albanymath.github.io/ats/}%
   \renewcommand*{\when}{3:00 p.m.}%
   \renewcommand*{\where}{ES-143}%
   \renewcommand*{\announcer}{Marco Varisco}%
 }
 \DeclareOption{colloquium}{%
   \renewcommand*{\event}{Colloquium}%
-  \renewcommand*{\eventurl}{https://www.albany.edu/math/colloquium.shtml}%
+  \renewcommand*{\eventurl}{https://albanymath.github.io/coll/}%
   \renewcommand*{\when}{3:00 p.m.}%
   \renewcommand*{\where}{ES-143}%
   \renewcommand*{\moreinfo}{(tea \&\ coffee at 2:30 p.m.\ in ES-152)}%
