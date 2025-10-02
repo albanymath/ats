@@ -1,0 +1,23 @@
+% !TeX program = xelatex
+\documentclass{UAmathtalk}
+
+\author{Ishika Ghosh}
+\address{Michigan State University}
+\urladdr{https://www.ishikaghosh.com}
+\title{Towards an Optimal Bound for the Interleaving Distance on Mapper Graphs}
+\date{Thursday, October 9, 2025}
+
+\renewcommand*{\where}{Massry B010}
+\renewcommand*{\abstractsize}{\normalsize}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Mapper graphs are a widely used tool in topological data analysis and visualization. They can be viewed as discrete approximations of Reeb graphs, offering insight into the shape and connectivity of complex data. Given a high-dimensional point cloud~$X$ equipped with a function $f\colon X \to \mathbb{R}$, a mapper graph provides a summary of the topological structure of~$X$ induced by~$f$, where each node represents a local neighborhood, and edges connect nodes whose corresponding neighborhoods overlap. Our focus is the interleaving distance for mapper graphs, arising from a discretization of the version for Reeb graphs, which is NP-hard to compute. This distance quantifies the similarity between two mapper graphs by measuring the extent to which they must be ``stretched'' to become comparable. Recent work introduced a loss function that provides an upper bound on the interleaving distance for mapper graphs, which evaluates how far a given assignment is from being a true interleaving. Finding the loss is computationally tractable, offering a practical way to estimate the distance.
+
+In this talk, I will describe a categorical framework for mapper graphs that makes this loss function precise, and I will show how finding the best upper bound can be formulated as an integer linear program. We validate our method both on small graphs, where the true interleaving distance is known, and on real-world data from the MPEG-7 image dataset, where we use the optimized loss as a distance for image classification. This provides the first computational pipeline for estimating mapper interleavings, bridging categorical theory, optimization, and data applications.
+\end{abstract}
+
+\end{document}
