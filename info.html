@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/ats/">
+  <title>Algebra Topology Seminar</title>
+  <meta name="description" content="Algebra/Topology Seminar, University at Albany, State University of New York">
+  <meta name="author" content="Marco Varisco">
+  <meta name="theme-color" content="rgb(70 22 107)">
+  <link rel="stylesheet" href="seminar.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <header id="header">
+    <div class="core">
+      <a href="https://www.albany.edu/math">
+        <img class="logo" alt="Math homepage, University at Albany, SUNY" src="logo.png" width="36" height="36">
+      </a>
+      <h1 id="masthead"></h1>
+      <noscript><p>This page won’t work without JavaScript.</p></noscript>
+    </div>
+  </header>
+  <div class="strip">
+    <div class="core">
+      <h2 id="headline" aria-live="polite"></h2>
+      <div id="controls">
+        <button id="toggle" type="button" aria-expanded="false" aria-controls="panel" aria-label="Semester and search">
+          <span class="bars" aria-hidden="true">
+            <span class="bar bar-top"></span>
+            <span class="bar bar-mid"></span>
+            <span class="bar bar-bot"></span>
+          </span>
+        </button>
+        <div id="panel">
+          <select id="select">
+            <option value="" disabled selected>Jump to semester…</option>
+          </select>
+          <form id="form" role="search">
+            <input id="search" type="search" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="Enter search terms…">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="subhead">
+    <p id="subhead" class="core">
+      <span class="subsubhead">
+        Organizers:
+        <a href="https://construkctor.github.io">Boris Goldfarb</a> (until 2017),
+        <a href="https://www.albany.edu/math/faculty/alexandre-tchernev">Alex Tchernev</a>,
+        <a href="https://varisco.info">Marco Varisco</a>,
+        <a href="https://zaremsky.github.io">Matt Zaremsky</a> (since 2018)
+      </span>
+    </p>
+  </div>
+  <main>
+    <div class="core" style="max-width: calc(var(--content-max) * .6); padding-top: 1rem;">
+      <canvas id="bars"></canvas>
+    </div>
+    <div class="core" style="max-width: calc(var(--content-max) * .3); margin-top: -1rem;">
+      <canvas id="donut"></canvas>
+    </div>
+  </main>
+  <footer>
+    <div class="core">
+      <div id="infolink">Info &amp; Stats</div>
+      <div id="download"></div>
+      <div id="colophon"></div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" integrity="sha256-SERKgtTty1vsDxll+qzd4Y2cF9swY9BCq62i9wXJ9Uo=" crossorigin="anonymous"></script>
+  <script src="seminardata.js"></script>
+  <script src="seminar.js"></script>
+  <script>
+"use strict";
+dom.headline.textContent = "Info & Stats";
+addToBaseDocTitle("Info & Stats");
+Chart.defaults.maintainAspectRatio = false;
+Chart.defaults.font.family = getCSSVar("--font-ui");
+const axisColor = getCSSVar("--purple-dark-shadow");
+const baseColors = ["purple", "gold", "gray"].map((x) => getCSSVar(`--${x}`));
+const colors = CSS.supports("color", "rgb(from red r g b)")
+  ? baseColors.map((color) => `rgb(from ${color} r g b / 85%)`) : baseColors;
+const statsTotal = countStats();
+const statsPerEd = [...editions.keys()].map((abbr) => countStats((t) => t.date.termYear.abbr === abbr));
+const datasetsPerEd = [...statsPerEd[0].keys()].map((cat, i) => ({
+  label: cat,
+  data: statsPerEd.map((stats) => stats.get(cat)),
+  backgroundColor: colors[i % colors.length],
+}));
+const domBars = document.getElementById("bars");
+domBars.parentNode.style.height = `${statsPerEd.length * 20}px`;
+new Chart(domBars, {
+  type: "bar",
+  data: {
+    labels: [...editions.values()].map((e) => e.name),
+    datasets: datasetsPerEd,
+  },
+  options: {
+    indexAxis: "y",
+    scales: {
+      y: {
+        stacked:  true,
+        grid:   { display: false },
+      },
+      x: {
+        stacked:  true,
+        position: "top",
+        ticks:  { font: { size: 10 } },
+        border: { color: axisColor },
+        grid:   { color: axisColor },
+      },
+    },
+    plugins: {
+      legend: { position: "bottom" },
+      tooltip: {
+        callbacks: {
+          label: (context) => {
+            const index = context.dataIndex;
+            const total = context.chart.data.datasets.reduce(
+              (a, dataset) => a + dataset.data[index], 0
+            );
+            const value = context.parsed.x;
+            const pcent = (value / total * 100).toFixed(1);
+            return `${context.dataset.label}: ${value}/${total} (${pcent}%)`;
+          }
+        }
+      }
+    }
+  }
+});
+new Chart(document.getElementById("donut"), {
+  type: "doughnut",
+  data: {
+    labels: [...statsTotal.keys()],
+    datasets: [{
+      data: [...statsTotal.values()],
+      backgroundColor: colors,
+    }],
+  },
+  options: {
+    rotation: 180,
+    cutout: "40%",
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: (context) => {
+            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+            const value = context.parsed;
+            const pcent = (value / total * 100).toFixed(1);
+            return `${value}/${total} (${pcent}%)`;
+          }
+        }
+      }
+    }
+  }
+});
+  </script>
+</body>
+</html>
