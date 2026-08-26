@@ -3326,7 +3326,7 @@ const TALKS = [
 "Tianyi Yu",
 "https://tianyi-math.github.io",
 "Université du Québec à Montréal, Canada",
-"",
+"A Positive Formula Involving Pipes and Bruhat Order",
 "Non-US"
 ],
 [
