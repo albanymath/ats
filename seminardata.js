@@ -1,4 +1,4 @@
-const UPDATED = "2026-08-12";
+const UPDATED = "2026-08-26";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3318,7 +3318,7 @@ const TALKS = [
 "Ryan Gelnett",
 "https://ryancgelnett.github.io",
 "UAlbany",
-"",
+"On Configuration Spaces and Their (Co)Homology",
 "UAlbany"
 ],
 [
