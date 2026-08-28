@@ -1,4 +1,4 @@
-const UPDATED = "2026-08-26";
+const UPDATED = "2026-08-28";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3334,7 +3334,7 @@ const TALKS = [
 "Kristine Bauer",
 "https://profiles.ucalgary.ca/kristine-bauer",
 "University of Calgary, Canada",
-"",
+"The Categorical Derivative in Functor Calculus",
 "Non-US"
 ],
 [
