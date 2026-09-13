@@ -1,4 +1,4 @@
-const UPDATED = "2026-09-11";
+const UPDATED = "2026-09-13";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3342,7 +3342,7 @@ const TALKS = [
 "Frank Wagner",
 "https://sites.google.com/view/francis-wagner",
 "Cornell University",
-"",
+"Conjugator Lengths and Isoperimetric Functions",
 "US"
 ],
 [
