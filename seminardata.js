@@ -1,4 +1,4 @@
-const UPDATED = "2026-09-13";
+const UPDATED = "2026-09-14";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3350,7 +3350,7 @@ const TALKS = [
 "Artem Kalmykov",
 "https://art-kalm.github.io",
 "McGill University, Canada",
-"",
+"A Glass Bead Game With Quantum Toda Lattice",
 "Non-US"
 ],
 [
