@@ -1,4 +1,4 @@
-const UPDATED = "2026-09-14";
+const UPDATED = "2026-09-15";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3358,7 +3358,7 @@ const TALKS = [
 "Barbara Giunti",
 "https://www.bgiunti.info",
 "UAlbany",
-"",
+"Support Representation Finite Posets (and Other Lovely Categories)",
 "UAlbany"
 ],
 [
