@@ -4,6 +4,7 @@ const DEFAULT = ["Fall", "2026"];
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
 const AT = ["Alex Tchernev",  "https://www.albany.edu/math/faculty/alexandre-tchernev"];
 const MV = ["Marco Varisco",  "https://varisco.info"];
+const KV = ["Kent Vashaw",    "https://kentvashaw.github.io"];
 const MZ = ["Matt Zaremsky",  "https://zaremsky.github.io"];
 
 const TERMS = { // abbr must be unique
@@ -13,7 +14,7 @@ const TERMS = { // abbr must be unique
 
 const EDITIONS = [
 //["term", "year", "time", "room", ["org1", "href1"], ["org2", "href2"], …]  (all the ["orgN", "hrefN"] are optional)
-  ["Fall",   "2026", "Thursdays 3:00–4:20",  "Massry B008",        AT, MV, MZ],
+  ["Fall",   "2026", "Thursdays 3:00–4:20",  "Massry B008",        MV, KV, MZ],
   ["Spring", "2026", "Thursdays 3:00–4:20",  "Massry B012",        AT, MV, MZ],
   ["Fall",   "2025", "Thursdays 3:00–4:20",  "Massry B010",        AT, MV, MZ],
   ["Spring", "2025", "Thursdays 3:00–4:20",  "Social Science 256", AT, MV, MZ],
