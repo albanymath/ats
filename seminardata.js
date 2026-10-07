@@ -1,4 +1,4 @@
-const UPDATED = "2026-09-20";
+const UPDATED = "2026-10-07";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3367,7 +3367,7 @@ const TALKS = [
 "Corey Bregman",
 "https://sites.google.com/view/cbregman",
 "Tufts University",
-"",
+"Nielsen Realization for Outer Automorphisms of 3-Manifold Groups",
 "US"
 ],
 [
