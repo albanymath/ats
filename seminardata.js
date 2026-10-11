@@ -14,6 +14,7 @@ const TERMS = { // abbr must be unique
 
 const EDITIONS = [
 //["term", "year", "time", "room", ["org1", "href1"], ["org2", "href2"], …]  (all the ["orgN", "hrefN"] are optional)
+  ["Spring", "2027", "Thursdays 3:00–4:20",  "Massry B010",        MV, KV, MZ],
   ["Fall",   "2026", "Thursdays 3:00–4:20",  "Massry B008",        MV, KV, MZ],
   ["Spring", "2026", "Thursdays 3:00–4:20",  "Massry B012",        AT, MV, MZ],
   ["Fall",   "2025", "Thursdays 3:00–4:20",  "Massry B010",        AT, MV, MZ],
@@ -3425,5 +3426,117 @@ const TALKS = [
 "Northeastern University",
 "",
 "US"
+],
+[
+"2027-01-28",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-02-04",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-02-11",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-02-18",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-02-25",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-03-04",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-03-11",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-03-18",
+"no classes",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-03-25",
+"Jidong Wang",
+"https://math.gatech.edu/people/jidong-wang",
+"Georgia Tech",
+"",
+"US"
+],
+[
+"2027-04-01",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-04-08",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-04-15",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-04-22",
+"",
+"",
+"",
+"",
+"special"
+],
+[
+"2027-04-29",
+"",
+"",
+"",
+"",
+"special"
 ],
 ];
