@@ -1,4 +1,4 @@
-const UPDATED = "2026-10-07";
+const UPDATED = "2026-10-11";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3375,7 +3375,7 @@ const TALKS = [
 "Dorian Kalir and Kory Pollicove",
 "",
 "Syracuse University",
-"",
+"Resolution Transfer and Systems of Higher Homotopies",
 "US"
 ],
 [
