@@ -1,4 +1,4 @@
-const UPDATED = "2026-10-11";
+const UPDATED = "2026-10-15";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3384,7 +3384,7 @@ const TALKS = [
 "Alex Tchernev",
 "https://www.albany.edu/math/faculty/alexandre-tchernev",
 "UAlbany",
-"",
+"Vector Fields on Chain Complexes, and How to Triangulate a Prism",
 "UAlbany"
 ],
 [
