@@ -3408,7 +3408,7 @@ const TALKS = [
 "Barry Minemyer",
 "https://facstaff.bloomu.edu/bminemyer/",
 "Commonwealth University-Bloomsburg",
-"",
+"Complex Hyperbolic Gromov–Thurston Metrics",
 "US"
 ],
 [
