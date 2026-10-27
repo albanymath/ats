@@ -1,4 +1,4 @@
-const UPDATED = "2026-10-15";
+const UPDATED = "2026-10-27";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3533,10 +3533,10 @@ const TALKS = [
 ],
 [
 "2027-04-29",
+"Jingyin Huang",
+"https://sites.google.com/site/huangmath0/",
+"Ohio State University",
 "",
-"",
-"",
-"",
-"special"
+"US"
 ],
 ];
