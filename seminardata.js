@@ -1,4 +1,4 @@
-const UPDATED = "2026-10-27";
+const UPDATED = "2026-10-29";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3400,7 +3400,7 @@ const TALKS = [
 "Be'eri Greenfeld",
 "https://sites.google.com/view/beeri-greenfeld",
 "Hunter College, CUNY",
-"",
+"Noncommutative Points",
 "US"
 ],
 [
