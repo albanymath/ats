@@ -3392,7 +3392,7 @@ const TALKS = [
 "Michael Lesnick",
 "https://mlesnick.github.io",
 "UAlbany",
-"",
+"Density-Sensitive Bifiltrations in Topological Data Analysis",
 "UAlbany"
 ],
 [
