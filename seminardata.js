@@ -1,4 +1,4 @@
-const UPDATED = "2026-11-09";
+const UPDATED = "2026-11-17";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];

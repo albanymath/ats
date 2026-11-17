@@ -90,6 +90,12 @@ const datasetsPerEd = [...statsPerEd[0].keys()].map((cat, i) => ({
   data: statsPerEd.map((stats) => stats.get(cat)),
   backgroundColor: colors[i % colors.length],
 }));
+const statsTable = [
+  ["Term", "Year", ...statsPerEd[0].keys()],
+  ...editions.values().map((e, i) => [e.term, e.year, ...statsPerEd[i].values().map(String)]),
+  [String(statsPerEd.length), "Total", ...statsTotal.values().map(String)]
+];
+dom.download.replaceChildren(el("a", { href: csv.createURL(statsTable), download: "stats.csv" }, "Download as CSV"));
 const domBars = document.getElementById("bars");
 domBars.parentNode.style.height = `${statsPerEd.length * 20}px`;
 new Chart(domBars, {
