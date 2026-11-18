@@ -1,4 +1,4 @@
-const UPDATED = "2026-11-17";
+const UPDATED = "2026-11-18";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3424,7 +3424,7 @@ const TALKS = [
 "Yunmeng Wu",
 "https://sites.google.com/view/yunmengwu",
 "Northeastern University",
-"",
+"Frobenius and Ozone Automorphism Groups of Quantum Cluster Algebras",
 "US"
 ],
 [
