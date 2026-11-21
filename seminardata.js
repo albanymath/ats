@@ -1,4 +1,4 @@
-const UPDATED = "2026-11-18";
+const UPDATED = "2026-11-21";
 const DEFAULT = ["Fall", "2026"];
 
 const BG = ["Boris Goldfarb", "https://construkctor.github.io"];
@@ -3509,11 +3509,11 @@ const TALKS = [
 ],
 [
 "2027-04-08",
+"Daniel Nakano",
+"https://www.math.uga.edu/directory/people/daniel-k-nakano",
+"University of Georgia",
 "",
-"",
-"",
-"",
-"special"
+"US"
 ],
 [
 "2027-04-15",
